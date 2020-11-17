@@ -284,7 +284,7 @@ const App = () => {
         </Card>
       )}
 
-      <Modal show={modal} onHide={() => handleModal('close')} onShow={handleShow}>
+      <Modal show={modal} onHide={() => handleModal('close')} onShow={handleShow} centered>
         <Modal.Header closeButton onClick={() => handleModal('close')}>
           <Modal.Title>{isRemove ? 'Delete User' : isUpdate ? 'Edit User' : 'Add New User'}</Modal.Title>
         </Modal.Header>
