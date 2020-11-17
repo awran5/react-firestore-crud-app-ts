@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
                 Firebase.
               </Card.Text>
               <a
-                href='https://github.com/awran5/react-firestore-crud-app'
+                href='https://github.com/awran5/react-firestore-crud-app-ts'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='btn btn-dark'
