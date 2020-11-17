@@ -1,6 +1,8 @@
 import React, { createContext } from 'react'
 import firebase, { App, Firestore } from './Firebase'
 
+const cloudRef = (ref: string) => Firestore.collection(ref)
+
 interface ContextProps {
   firebase: typeof firebase
   App: firebase.app.App
@@ -10,10 +12,8 @@ interface ContextProps {
 export const AppContext = createContext<ContextProps>({
   firebase,
   App,
-  cloudRef: (ref: string) => Firestore.collection(ref),
+  cloudRef,
 })
-
-const cloudRef = (ref: string) => Firestore.collection(ref)
 
 interface ProviderProps {
   children: React.ReactNode
