@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { useContext, useState, useRef } from 'react'
+import React, { useContext, useState, useRef, useEffect } from 'react'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import Modal from 'react-bootstrap/Modal'
 import ModalHeader from 'react-bootstrap/ModalHeader'
@@ -16,16 +16,40 @@ import { AppContext } from './Context'
 
 import { EditIcon, RemoveIcon, UserIcon } from './components/icons/Svgs'
 
+const formatDate = (date: number) =>
+  new Date(date * 1000).toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    month: 'short',
+    year: 'numeric'
+  })
+
 type User = {
   id: string
   name: string
   email: string
+  createdAt: {
+    nanoseconds: number
+    seconds: number
+  }
+  updatedAt: {
+    nanoseconds: number
+    seconds: number
+  }
 }
 
 const initialValues: User = {
   id: '',
   name: '',
-  email: ''
+  email: '',
+  createdAt: {
+    nanoseconds: 0,
+    seconds: 0
+  },
+  updatedAt: {
+    nanoseconds: 0,
+    seconds: 0
+  }
 }
 const initialAlert = {
   show: false,
@@ -63,15 +87,25 @@ const App = () => {
     }))
   }
 
+  useEffect(() => {
+    if (users) {
+      users.map((user) => {
+        console.log(user)
+        return ''
+      })
+    }
+  }, [users])
+
   const handleUpdateValues = (user: User) => {
     setModal(true)
     isUpdate.current = true
     const { id, name, email } = user
-    setFormValues({
+    setFormValues((prev) => ({
+      ...prev,
       id,
       name,
       email
-    })
+    }))
   }
 
   const handleRemoveValues = (user: User) => {
@@ -200,6 +234,8 @@ const App = () => {
                 <th className='text-center'>#</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Created</th>
+                <th>Modified</th>
                 <th className='text-center'>Actions</th>
               </tr>
             </thead>
@@ -209,6 +245,8 @@ const App = () => {
                   <td className='align-middle text-center'>{index + 1}</td>
                   <td className='align-middle'>{user.name}</td>
                   <td className='align-middle'>{user.email}</td>
+                  <td className='align-middle'>{formatDate(user.createdAt.seconds)}</td>
+                  <td className='align-middle'>{user.updatedAt ? formatDate(user.updatedAt.seconds) : '-'}</td>
                   <td className='align-middle text-center'>
                     <Button variant='light' onClick={() => handleUpdateValues(user)}>
                       <EditIcon />
