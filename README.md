@@ -6,14 +6,14 @@ A simple CRUD (`Create`, `Read`, `Update`, `Delete`) React App using Hooks, Cont
 
 ### Instructions
 
-- Download or clone the repo:
+1. Download or clone the repo:
 
 ```
 https://github.com/awran5/react-firestore-crud-app-ts.git
 ```
 
-- Create a new [firebase](https://console.firebase.google.com/) project or use your existing one and enable **Cloud Firestore** database.
-- Create a new `.env.local` file inside the main app folder and copy/paste your firebase project `configuration`.
+2. Create a new [firebase](https://console.firebase.google.com/) project or use your existing one and enable **Cloud Firestore** database.
+3. Create a new `.env.local` file inside the main app folder and copy/paste your firebase project `configuration`.
 
 ```bash
   REACT_APP_FIREBASE_API_KEY = xxxxxxxxxxxxxxxxxxxxxx
@@ -24,5 +24,11 @@ https://github.com/awran5/react-firestore-crud-app-ts.git
   REACT_APP_FIREBASE_MESSAGING_SENDER_ID = xxxxxxxxxxxxxxxxxxxxxx
   REACT_APP_FIREBASE_APP_ID = xxxxxxxxxxxxxxxxxxxxxx
 ```
+
+### Changelog - 07/2021
+
+- Update dependencies
+- Removed: fontawesome
+- cleaning up unnecessary code
 
 ### [Live Example](https://react-firestore-crud-app.vercel.app/)

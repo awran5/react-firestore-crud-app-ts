@@ -17,8 +17,8 @@ const Layout = ({ children }: LayoutProps) => {
             <Card.Body className='p-3 my-4'>
               <Card.Title>React Firebase CRUD App</Card.Title>
               <Card.Text className='py-2'>
-                A simple CRUD (Create, Read, Update, and Delete) operations App using React Hooks, Context API and
-                Firebase.
+                A simple CRUD (Create, Read, Update, and Delete) operations App
+                using React Hooks, Context API and Firebase.
               </Card.Text>
               <a
                 href='https://github.com/awran5/react-firestore-crud-app-ts'
