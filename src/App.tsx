@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { useContext, useState, useRef, useEffect } from 'react'
+import React, { useContext, useState, useRef } from 'react'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import Modal from 'react-bootstrap/Modal'
 import ModalHeader from 'react-bootstrap/ModalHeader'
@@ -86,15 +86,6 @@ const App = () => {
       [name]: value
     }))
   }
-
-  useEffect(() => {
-    if (users) {
-      users.map((user) => {
-        console.log(user)
-        return ''
-      })
-    }
-  }, [users])
 
   const handleUpdateValues = (user: User) => {
     setModal(true)
