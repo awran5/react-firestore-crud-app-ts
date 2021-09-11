@@ -1,8 +1,8 @@
 # React TypeScript Firestore CRUD App
 
-A simple CRUD (`Create`, `Read`, `Update`, `Delete`) React App using Hooks, Context API, Cloud Firestroe and Bootstrap for the UI.
+A simple CRUD (`Create`, `Read`, `Update`, `Delete`) React App using Hooks, Cloud [Firestroe](https://firebase.google.com/docs/firestore) and [react-bootstrap](https://react-bootstrap.github.io/) for the UI.
 
-![screenshot](./screenshot.png)
+![screenshot](./screenshot.gif)
 
 ### Instructions
 
@@ -18,7 +18,6 @@ https://github.com/awran5/react-firestore-crud-app-ts.git
 ```bash
   REACT_APP_FIREBASE_API_KEY = xxxxxxxxxxxxxxxxxxxxxx
   REACT_APP_FIREBASE_AUTH_DOMAIN = xxxxxxxxxxxxxxxxxxxxxx
-  REACT_APP_FIREBASE_DATABASE_URL = xxxxxxxxxxxxxxxxxxxxxx
   REACT_APP_FIREBASE_PROJECT_ID = xxxxxxxxxxxxxxxxxxxxxx
   REACT_APP_FIREBASE_STORAGE_BUCKET = xxxxxxxxxxxxxxxxxxxxxx
   REACT_APP_FIREBASE_MESSAGING_SENDER_ID = xxxxxxxxxxxxxxxxxxxxxx
